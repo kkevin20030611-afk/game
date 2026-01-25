@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lángos Clicker</title>
+    <link rel="stylesheet" href="public/styles/style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div id="login-screen" class="overlay">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h1>Lángos Clicker</h1>
+                <p class="tagline">Üdvözlünk a Lángos Birodalomban</p>
+            </div>
+
+            <div class="auth-form">
+                <div class="form-group">
+                    <label>Felhasználónév</label>
+                    <input type="text" id="username" placeholder="Valaki" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label>Jelszó</label>
+                    <input type="password" id="password" placeholder="******" autocomplete="current-password">
+                </div>
+
+                <button id="btn-login" class="btn-primary btn-large">Bejelentkezés</button>
+                <p class="auth-divider">vagy</p>
+                <button id="btn-show-register" class="btn-link">Új fiók létrehozása</button>
+
+                <p id="login-msg" class="msg"></p>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 24px; margin-top: -32px;">
+                <a href="wiki.html" target="_blank" class="wiki-link">📖 Wiki</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- REGISZTRÁCIÓ POPUP -->
+    <div id="register-popup" class="popup hidden">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Regisztráció</h2>
+                <button id="btn-close-register" class="btn-close">&times;</button>
+            </div>
+
+            <div class="popup-body">
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p style="justify-content: justify;"><strong>Figyelem!</strong> Ne használj olyan jelszót vagy
+                        felhasználónevet, amit más oldalakon is
+                        használsz! Ez csak egy Demo.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Felhasználónév</label>
+                    <input type="text" id="register-username" placeholder="Min. 3 karakter" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label>Jelszó</label>
+                    <input type="password" id="register-password" placeholder="Min. 4 karakter"
+                        autocomplete="new-password">
+                </div>
+
+                <button id="btn-register" class="btn-primary btn-large">Regisztráció</button>
+                <p id="register-msg" class="msg"></p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JÁTÉK -->
+    <div id="game-screen" class="hidden">
+
+        <!-- FEJLÉC -->
+        <header>
+            <div class="user-info">
+                <span id="display-username">USER</span>
+                <span style="color: var(--text-secondary);">|</span>
+                <span style="color: var(--highlight);">Lv. <span id="display-level">1</span></span>
+            </div>
+
+            <div class="xp-bar-container">
+                <div id="xp-bar-fill" style="width: 0%;">
+                    <span id="xp-text">0 / 100 XP</span>
+                </div>
+            </div>
+
+            <button id="btn-logout" class="btn-danger">KILÉPÉS</button>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <!-- BAL: DASHBOARD -->
+            <section class="dashboard">
+                <div class="stats">
+                    <h2 id="langos-counter">0.000 Lángos</h2>
+                    <p id="lpc-counter">0.000 LPC</p>
+                    <p id="lps-counter">0.000 LPS</p>
+                </div>
+
+                <div class="clicker-area">
+                    <button id="btn-clicker" class="langos-btn">
+                        <img src="public/pictures/langos.png" alt="Lángos" class="langos-img">
+                    </button>
+                </div>
+
+                <div class="oil-container">
+                    <label>Olaj Tartály</label>
+                    <div class="oil-bar-bg">
+                        <div id="oil-bar-fill" style="width: 100%;"></div>
+                    </div>
+                    <span id="oil-percentage">100%</span>
+                </div>
+                <a href="wiki.html" target="_blank" class="wiki-link">📖 Wiki</a>
+            </section>
+
+            <!-- KÖZÉP: LOG -->
+            <section class="log-area">
+                <h3>ESEMÉNYNAPLÓ</h3>
+                <div id="event-log">
+                    <div class="log-entry">Rendszer elindult...</div>
+                </div>
+            </section>
+
+            <!-- JOBB: BOLT -->
+            <section class="market">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="buildings">MUNKATÁRSAK</button>
+                    <button class="tab-btn" data-tab="upgrades">FEJLESZTÉS</button>
+                    <button class="tab-btn" data-tab="oil">KARBANTARTÁS</button>
+                </div>
+
+                <div id="tab-buildings" class="tab-content active">
+                    <!-- MUNKATÁRSAK -->
+                </div>
+                <div id="tab-upgrades" class="tab-content">
+                    <!-- FEJLESZTÉS -->
+                </div>
+                <div id="tab-oil" class="tab-content">
+                    <!-- KARBANTARTÁS -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="public/js/main.js"></script>
+</body>
+
+</html>

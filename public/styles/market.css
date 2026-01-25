@@ -1,0 +1,69 @@
+/* Shop Style */
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    flex: 1;
+    background: #222;
+    color: var(--text-secondary);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background: var(--bg-panel);
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.tab-content {
+    display: none;
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.shop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #252525;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+}
+
+.shop-item .info h4 {
+    margin: 0 0 5px 0;
+    color: white;
+}
+
+.shop-item .info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.btn-buy {
+    background: var(--highlight);
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-buy:disabled {
+    background: #444;
+    color: #666;
+    cursor: not-allowed;
+}

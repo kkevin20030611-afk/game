@@ -1,0 +1,92 @@
+/* Dashboard stílusok */
+
+.clicker-area {
+    position: relative;
+}
+
+.langos-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    background: #222;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.langos-btn:active {
+    transform: scale(0.95);
+}
+
+.langos-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.stats h2 {
+    color: var(--accent);
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}
+
+.stats p {
+    color: var(--text-secondary);
+    margin: 0;
+    text-align: center;
+}
+
+.floating-text {
+    position: absolute;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    pointer-events: none;
+    animation: float-up 1s ease-out forwards;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.oil-container {
+    width: 100%;
+}
+
+.oil-bar-bg {
+    width: 100%;
+    height: 20px;
+    background: #333;
+    border: 1px solid #555;
+    margin-top: 5px;
+    position: relative;
+}
+
+#oil-bar-fill {
+    height: 100%;
+    background: var(--warning);
+    transition: width 0.5s, background-color 0.5s;
+}
+
+#oil-bar-fill.critical {
+    background-color: var(--danger) !important;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}

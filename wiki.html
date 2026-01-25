@@ -1,0 +1,1057 @@
+<!-- 
+ 
+
+
+100%-ban generált file!!!!
+ 
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lángos Clicker - Wiki</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #121212;
+            --bg-panel: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #aaaaaa;
+            --accent: #f39c12;
+            --highlight: #2ecc71;
+            --danger: #e74c3c;
+            --warning: #f1c40f;
+            --primary-btn: #3498db;
+            --border-color: #333;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .wiki-header {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .wiki-header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .wiki-header p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.5rem;
+        }
+
+        /* Layout */
+        .wiki-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-panel);
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            border-right: 2px solid var(--border-color);
+        }
+
+        .sidebar h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar nav ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .sidebar nav ul li a:hover {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .sidebar nav ul li a.active {
+            background: rgba(243, 156, 18, 0.2);
+            color: var(--accent);
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Content */
+        .wiki-content {
+            flex: 1;
+            padding: 2rem 3rem;
+            max-width: 900px;
+        }
+
+        .wiki-content h2 {
+            color: var(--accent);
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .wiki-content h3 {
+            color: var(--highlight);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .wiki-content h4 {
+            color: var(--primary-btn);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .wiki-content p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .wiki-content strong {
+            color: var(--text-primary);
+        }
+
+        .wiki-content code {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid var(--primary-btn);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: var(--primary-btn);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .wiki-content pre {
+            background: #0d0d0d;
+            border-left: 4px solid var(--primary-btn);
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .wiki-content pre code {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-panel);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--accent), #e67e22);
+        }
+
+        thead th {
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tbody tr:hover {
+            background: rgba(243, 156, 18, 0.05);
+        }
+
+        tbody td {
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        tbody td:first-child {
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Blockquotes */
+        blockquote {
+            background: rgba(241, 196, 15, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        blockquote p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .badge-success {
+            background: var(--highlight);
+            color: #000;
+        }
+
+        .badge-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .badge-warning {
+            background: var(--warning);
+            color: #000;
+        }
+
+        .badge-info {
+            background: var(--primary-btn);
+            color: white;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e67e22;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        /* Footer */
+        .wiki-footer {
+            background: var(--bg-panel);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--border-color);
+            margin-top: 3rem;
+        }
+
+        .wiki-footer p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .wiki-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+                border-right: none;
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .wiki-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="wiki-header">
+        <h1>Lángos Clicker Wiki</h1>
+        <p>Teljes útmutató minden játékmechanikához</p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="wiki-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h3>📋 Navigáció</h3>
+            <nav>
+                <ul>
+                    <li><a href="#alapok">Alapok</a></li>
+                    <li><a href="#termeles">Termelési Rendszer</a></li>
+                    <li><a href="#munkatarsak">Munkatársak</a></li>
+                    <li><a href="#fejlesztesek">Fejlesztések</a></li>
+                    <li><a href="#olaj">Olaj Rendszer</a></li>
+                    <li><a href="#xp">XP és Szintlépés</a></li>
+                    <li><a href="#specialis">Speciális Mechanikák</a></li>
+                    <li><a href="#adozas">Adózás és NAV</a></li>
+                    <li><a href="#tippek">Tippek és Stratégiák</a></li>
+                    <li><a href="#technika">Technikai Info</a></li>
+                    <li><a href="#debug">Debug Konzol</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <main class="wiki-content">
+            <!-- Alapok -->
+            <section id="alapok">
+                <h2>Alapok</h2>
+
+                <h3>💰 Valuta</h3>
+                <ul>
+                    <li><strong>Lángos (L)</strong> - A játék fő valutája</li>
+                    <li>Megszerezhető kattintással vagy automatikus termeléssel</li>
+                </ul>
+
+                <h3>🎯 Cél</h3>
+                <ul>
+                    <li>Minél több lángos előállítása</li>
+                    <li>Munkatársak vásárlása és fejlesztése</li>
+                    <li>Maximális hatékonyság elérése</li>
+                </ul>
+            </section>
+
+            <!-- Termelési Rendszer -->
+            <section id="termeles">
+                <h2>Termelési Rendszer</h2>
+
+                <h3>🖱️ Kattintásos Termelés (LPC)</h3>
+                <p><strong>Alap érték:</strong> 0.001 Lángos/kattintás</p>
+
+                <h4>Bónuszok:</h4>
+                <ul>
+                    <li><strong>Hőmérséklet fejlesztések</strong> - Direktben növelik a LPC-t</li>
+                    <li><strong>Szint szorzó</strong> - +1% minden szintenként</li>
+                    <li><strong>Recepteskönyv</strong> - Szorzó a teljes LPC-re</li>
+                    <li><strong>Kritikus találat</strong> - 1.5x szorzó (esély szerint)</li>
+                    <li><strong>Olaj büntetés</strong> - 0% olajnál csak 20% marad</li>
+                </ul>
+
+                <p><strong>Számítás:</strong></p>
+                <pre><code>LPC = (alap + hőmérséklet_bónusz) × (1 + szint × 0.01) × receptkönyv_szorzó</code></pre>
+
+                <h3>⚙️ Automatikus Termelés (LPS)</h3>
+                <p>Munkatársak által generálva</p>
+
+                <h4>Bónuszok:</h4>
+                <ul>
+                    <li><strong>Szint szorzó</strong> - +1% minden szintenként</li>
+                    <li><strong>Ostor fejlesztés</strong> - Szorzó a teljes LPS-re</li>
+                    <li><strong>Olaj büntetés</strong> - 0% olajnál teljesen leáll</li>
+                </ul>
+
+                <p><strong>Számítás:</strong></p>
+                <pre><code>LPS = (összes_munkatárs_LPS) × (1 + szint × 0.01) × ostor_szorzó</code></pre>
+            </section>
+
+            <!-- Munkatársak -->
+            <section id="munkatarsak">
+                <h2>Munkatársak</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Név</th>
+                            <th>Alap Ár</th>
+                            <th>LPS</th>
+                            <th>Olaj/s</th>
+                            <th>Szint</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inas</td>
+                            <td>1.5 L</td>
+                            <td>0.001</td>
+                            <td>0.05</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Pék</td>
+                            <td>10 L</td>
+                            <td>0.002</td>
+                            <td>0.08</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Mester Pék</td>
+                            <td>50 L</td>
+                            <td>0.015</td>
+                            <td>0.15</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Gordon Ramsay</td>
+                            <td>350 L</td>
+                            <td>0.032</td>
+                            <td>0.45</td>
+                            <td>Lv. 6</td>
+                        </tr>
+                        <tr>
+                            <td>Séf</td>
+                            <td>1400 L</td>
+                            <td>0.08</td>
+                            <td>3.5</td>
+                            <td>Lv. 10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>💡 Speciális Szabályok</h3>
+
+                <h4>Inflációs Rendszer:</h4>
+                <ul>
+                    <li>Minden vásárlás után az ár növekszik</li>
+                    <li>Növekedés: <code>ár × 1.25</code> (25% infláció)</li>
+                </ul>
+
+                <h4>Séf Bónusz:</h4>
+                <ul>
+                    <li>Minden vásárolt Séf <strong>+10 Inast</strong> ad ajándékba</li>
+                    <li>Inas véletlen eltűnés: <strong>3% esély/perc</strong> (ha van Séf)</li>
+                </ul>
+            </section>
+
+            <!-- Fejlesztések -->
+            <section id="fejlesztesek">
+                <h2>Fejlesztések</h2>
+
+                <h3>🔥 Hőmérséklet Fejlesztések (8 szint)</h3>
+                <p>Növeli a <strong>kattintásonkénti</strong> termelést (LPC).</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Hőfok</th>
+                            <th>Ár</th>
+                            <th>LPC Bónusz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>20°C</td>
+                            <td>10 L</td>
+                            <td>+0.001</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>25°C</td>
+                            <td>25 L</td>
+                            <td>+0.003</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>30°C</td>
+                            <td>60 L</td>
+                            <td>+0.005</td>
+                        </tr>
+                        <tr>
+                            <td>IV</td>
+                            <td>40°C</td>
+                            <td>150 L</td>
+                            <td>+0.008</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <td>50°C</td>
+                            <td>400 L</td>
+                            <td>+0.012</td>
+                        </tr>
+                        <tr>
+                            <td>VI</td>
+                            <td>60°C</td>
+                            <td>1000 L</td>
+                            <td>+0.028</td>
+                        </tr>
+                        <tr>
+                            <td>VII</td>
+                            <td>80°C</td>
+                            <td>2500 L</td>
+                            <td>+0.055</td>
+                        </tr>
+                        <tr>
+                            <td>VIII</td>
+                            <td>100°C</td>
+                            <td>4500 L</td>
+                            <td>+0.15</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <blockquote>
+                    <p><strong>Megjegyzés:</strong> A bónuszok összeadódnak minden szintnél</p>
+                </blockquote>
+
+                <h3>🔪 Ostor Fejlesztések (3 szint)</h3>
+                <p>Növeli az <strong>automatikus</strong> termelést (LPS).</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Ár</th>
+                            <th>LPS Szorzó</th>
+                            <th>Követelmény</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>100 L</td>
+                            <td>×1.01 (+1%)</td>
+                            <td>Lv. 5</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>250 L</td>
+                            <td>×1.03 (+3%)</td>
+                            <td>Lv. 5</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>500 L</td>
+                            <td>×1.05 (+5%)</td>
+                            <td>Lv. 5</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>⚡ Kritikus Találat (10 szint)</h3>
+                <p>Esély <strong>1.5× szorzóra</strong> kattintáskor.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Ár</th>
+                            <th>Krit Esély</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>200 L</td>
+                            <td>1%</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>400 L</td>
+                            <td>2%</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>800 L</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>X</td>
+                            <td>102,400 L</td>
+                            <td>10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><em>Követelmény: Lv. 15 minden szinthez</em></p>
+
+                <h3>📖 Recepteskönyv (3 szint)</h3>
+                <p>Növeli a <strong>kattintásonkénti</strong> termelést (LPC szorzó).</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Ár</th>
+                            <th>LPC Szorzó</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>250 L</td>
+                            <td>×1.01 (+1%)</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>500 L</td>
+                            <td>×1.03 (+3%)</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>1000 L</td>
+                            <td>×1.05 (+5%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Követelmény: Lv. 6 minden szinthez</em></p>
+            </section>
+
+            <!-- Olaj Rendszer -->
+            <section id="olaj">
+                <h2>Olaj Rendszer</h2>
+
+                <h3>🛢️ Olaj Alapok</h3>
+                <ul>
+                    <li><strong>Alap Kapacitás:</strong> 100L</li>
+                    <li><strong>Alap Ár:</strong> 3 Lángos</li>
+                    <li><strong>Fogyasztás:</strong> Munkatársak olajfogyasztásának összege</li>
+                </ul>
+
+                <h3>🚨 Olaj Hatások</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Olaj Szint</th>
+                            <th>Hatás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&gt; 0%</td>
+                            <td>Normál termelés</td>
+                        </tr>
+                        <tr>
+                            <td>0%</td>
+                            <td><span class="badge badge-danger">LPS: 0</span> <span class="badge badge-danger">LPC:
+                                    20%</span></td>
+                        </tr>
+                        <tr>
+                            <td>&lt; 20%</td>
+                            <td><span class="badge badge-warning">Piros villogás</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>💧 Olaj Vásárlás</h3>
+                <p>Egy gombnyomással teletölti a tartályt</p>
+                <p><strong>Dinamikus ár:</strong> <code>Alap_Ár × (1 + szint × 0.5)</code></p>
+                <ul>
+                    <li>Lv. 1: 4.5 L</li>
+                    <li>Lv. 10: 18 L</li>
+                    <li>Lv. 30: 48 L</li>
+                </ul>
+
+                <h3>📦 Tartály Bővítés (5 szint)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Ár</th>
+                            <th>Kapacitás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>8 L</td>
+                            <td>150L</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>15 L</td>
+                            <td>220L</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>30 L</td>
+                            <td>300L</td>
+                        </tr>
+                        <tr>
+                            <td>IV</td>
+                            <td>55 L</td>
+                            <td>500L</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <td>100 L</td>
+                            <td>750L</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>♻️ Újrahasznosítás (5 szint)</h3>
+                <p>Kattintáskor esély az olaj visszatöltésére (1% a max kapacitásból)</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Szint</th>
+                            <th>Ár</th>
+                            <th>Esély</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>I</td>
+                            <td>650 L</td>
+                            <td>1%</td>
+                        </tr>
+                        <tr>
+                            <td>II</td>
+                            <td>1,500 L</td>
+                            <td>3%</td>
+                        </tr>
+                        <tr>
+                            <td>III</td>
+                            <td>3,000 L</td>
+                            <td>5%</td>
+                        </tr>
+                        <tr>
+                            <td>IV</td>
+                            <td>6,000 L</td>
+                            <td>7%</td>
+                        </tr>
+                        <tr>
+                            <td>V</td>
+                            <td>12,000 L</td>
+                            <td>10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>Követelmény: Lv. 10 minden szinthez</em></p>
+                <p>💙 <strong>Kék lebegő szöveg</strong> jelzi a visszatöltést</p>
+
+                <h3>🔄 Automatikus Újratöltés</h3>
+                <ul>
+                    <li><strong>Ár:</strong> 10,000 Lángos</li>
+                    <li><strong>Követelmény:</strong> Lv. 30</li>
+                    <li>Ha olaj &lt; 15%, automatikusan tankol</li>
+                    <li>Csak akkor vásárol, ha van elég pénz</li>
+                </ul>
+            </section>
+
+            <!-- XP és Szintlépés -->
+            <section id="xp">
+                <h2>XP és Szintlépés</h2>
+
+                <h3>⭐ XP Megszerzése</h3>
+                <p><strong>Módszerek:</strong></p>
+                <ol>
+                    <li><strong>100 kattintás</strong> = 1 XP</li>
+                    <li><strong>500 L költés</strong> = 1 XP (munkatársak, fejlesztések)</li>
+                </ol>
+
+                <p><strong>Szintlépés:</strong></p>
+                <p>Szükséges XP: <code>szint × 100</code></p>
+                <ul>
+                    <li>Lv. 1→2: 100 XP</li>
+                    <li>Lv. 2→3: 200 XP</li>
+                    <li>Lv. 10→11: 1000 XP</li>
+                </ul>
+
+                <h3>📈 Szint Bónuszok</h3>
+                <ul>
+                    <li><strong>+1% LPS</strong> minden szintenként</li>
+                    <li><strong>+1% LPC</strong> minden szintenként</li>
+                    <li>Új fejlesztések feloldása szint követelményekkel</li>
+                </ul>
+            </section>
+
+            <!-- Speciális Mechanikák -->
+            <section id="specialis">
+                <h2>Speciális Mechanikák</h2>
+
+                <h3>🎲 Kritikus Találat</h3>
+                <ul>
+                    <li><strong>Szorzó:</strong> 1.5×</li>
+                    <li><strong>Vizuális:</strong> Sárga, nagyobb lebegő szöveg ("KRIT!")</li>
+                    <li>Csak kattintásra, automatikus termelésre nem</li>
+                </ul>
+
+                <h3>💨 Lebegő Szövegek</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Típus</th>
+                            <th>Szín</th>
+                            <th>Trigger</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Normál</td>
+                            <td>Narancssárga</td>
+                            <td>Kattintás</td>
+                        </tr>
+                        <tr>
+                            <td>Kritikus</td>
+                            <td>Sárga</td>
+                            <td>Krit kattintás</td>
+                        </tr>
+                        <tr>
+                            <td>Olaj</td>
+                            <td>Kék</td>
+                            <td>Újrahasznosítás</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🎯 Animációk</h3>
+                <ul>
+                    <li>Lángos gomb lenyomás: Scale 0.9</li>
+                    <li>Kritikus találat: Nagyobb, félkövér szöveg</li>
+                    <li>Olaj kritikus: Piros villogás</li>
+                </ul>
+            </section>
+
+            <!-- Adózás és NAV -->
+            <section id="adozas">
+                <h2>Adózás és NAV</h2>
+
+                <h3>💸 ÁFA (27%)</h3>
+
+                <h4>Alkalmazva:</h4>
+                <ul>
+                    <li>Olaj vásárlás</li>
+                    <li>Hőmérséklet fejlesztések</li>
+                    <li>Ostor fejlesztések</li>
+                    <li>Kritikus fejlesztések</li>
+                    <li>Recepteskönyv fejlesztések</li>
+                    <li>Olaj rendszer fejlesztések</li>
+                </ul>
+
+                <h4>NEM alkalmazva:</h4>
+                <ul>
+                    <li>Munkatársak vásárlása</li>
+                </ul>
+
+                <p><strong>Számítás:</strong></p>
+                <pre><code>Végső Ár = Alap Ár + (Alap Ár × 0.27)</code></pre>
+
+                <h3>🚨 NAV Rendszer</h3>
+                <ul>
+                    <li><strong>Esély:</strong> 10%/perc</li>
+                    <li><strong>Büntetés:</strong> 25% a teljes pénzedből elvesz</li>
+                </ul>
+
+                <p><strong>Példa:</strong></p>
+                <ul>
+                    <li>Ha van 1000 Lángosod</li>
+                    <li>NAV jön → Elvesz 250 Lángost</li>
+                    <li>Marad 750 Lángos</li>
+                </ul>
+                <blockquote>
+                    <p>⚠️ <strong>Log üzenet:</strong> Piros szöveg figyelmeztet</p>
+                </blockquote>
+            </section>
+
+            <!-- Tippek és Stratégiák -->
+            <section id="tippek">
+                <h2>Tippek és Stratégiák</h2>
+
+                <h3>Kezdőknek <span class="badge badge-success">Kezdő</span></h3>
+                <ol>
+                    <li>Először <strong>Inasok</strong> vásárlása</li>
+                    <li><strong>Hőmérséklet I-III</strong> gyors fejlesztés</li>
+                    <li>Olajra figyelés (ne menjen 0-ra!)</li>
+                </ol>
+
+                <h3>Középhaladóknak <span class="badge badge-info">Közép</span></h3>
+                <ol>
+                    <li><strong>Gordon Ramsay</strong> feloldása (Lv. 6)</li>
+                    <li><strong>Ostor</strong> és <strong>Recepteskönyv</strong> kiegyensúlyozása</li>
+                    <li><strong>Automatikus Újratöltés</strong> cél (Lv. 30)</li>
+                </ol>
+
+                <h3>Haladóknak <span class="badge badge-danger">Haladó</span></h3>
+                <ol>
+                    <li><strong>Séf</strong> (+10 Inas bónusz) maximalizálás</li>
+                    <li><strong>Kritikus X</strong> (10%) teljes kiépítése</li>
+                    <li><strong>Újrahasznosítás V</strong> olaj hatékonysághoz</li>
+                </ol>
+            </section>
+
+            <!-- Technikai Információk -->
+            <section id="technika">
+                <h2>Technikai Információk</h2>
+
+                <h3>⚙️ Játék Loop</h3>
+                <ul>
+                    <li><strong>Frissítés:</strong> 100ms (10 FPS)</li>
+                    <li><strong>Auto-save:</strong> 30s</li>
+                    <li><strong>NAV ellenőrzés:</strong> 60s</li>
+                </ul>
+
+                <h3>📊 Számlálók</h3>
+                <ul>
+                    <li>LPS: Lángos/másodperc</li>
+                    <li>LPC: Lángos/kattintás</li>
+                    <li>Olaj: Liter/másodperc</li>
+                </ul>
+
+                <h3>💾 Mentés Rendszer</h3>
+                <ul>
+                    <li><strong>Automatikus:</strong> 30 másodpercenként</li>
+                    <li><strong>Szerver:</strong> SQLite adatbázis</li>
+                    <li><strong>Formátum:</strong> JSON</li>
+                </ul>
+            </section>
+
+            <!-- Debug Konzol -->
+            <section id="debug">
+                <h2>Debug Konzol</h2>
+
+                <p>Fejlesztői parancsok a böngésző konzolban (F12):</p>
+
+                <pre><code>// Pénz beállítás
+GAME.money = 30000
+
+// Szint beállítás
+GAME.xp.level = 50
+
+// Olaj feltöltés
+GAME.oil = 100
+
+// Fejlesztés szintek
+GAME.temperatureLevel = 8
+GAME.critLevel = 10
+GAME.whipLevel = 3
+
+// UI frissítés
+UI.updateUI(0, Shop.getMaxOilCapacity, Shop.getOilCost)
+UI.renderBuildings()</code></pre>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <div class="wiki-footer">
+        <p><strong>Verzió:</strong> 2.4.1</p>
+        <p><strong>Utolsó frissítés:</strong> 2026.01.25</p>
+        <p><strong>Készítette:</strong> Kis Kevin</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Smooth scroll to section
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.sidebar a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

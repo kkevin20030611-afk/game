@@ -1,0 +1,83 @@
+/* Alap stílusok */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Roboto Mono', monospace;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-btn), #2980b9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-large {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+}
+
+.btn-link {
+    background: transparent;
+    border: none;
+    color: var(--primary-btn);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.btn-close:hover {
+    color: var(--danger);
+}

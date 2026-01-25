@@ -1,0 +1,22 @@
+/* Esemény Log stíl' */
+
+#event-log {
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    border: 1px solid #333;
+    padding: 10px;
+    background: #000;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 2px;
+}
+
+.log-entry span {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-right: 5px;
+}

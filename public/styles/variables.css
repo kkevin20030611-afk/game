@@ -1,0 +1,14 @@
+/* CSS változók */
+:root {
+    --bg-dark: #121212;
+    --bg-panel: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --accent: #f39c12;
+    --highlight: #2ecc71;
+    --danger: #e74c3c;
+    --warning: #f1c40f;
+    --primary-btn: #3498db;
+    --xp-bar: #9b59b6;
+    --border-color: #333;
+}
